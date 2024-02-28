@@ -1,10 +1,27 @@
 const cardsPerPage = 10;
 let currentPage = 1;
 let data = [];
+
+// Title
+const title = document.createElement('h1');
+title.innerText = 'PAGINATION';
+title.id = 'title';
+document.body.appendChild(title);
+
+// Description
+const description = document.createElement('p');
+description.id = 'description';
+description.innerText = 'This is a pagination task';
+document.body.appendChild(description);
+
+// container to hold all cards
 const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
+
+
+//  pagination div
 const pagination = document.createElement('div');
 pagination.className = 'pagination';
 document.body.appendChild(pagination);
