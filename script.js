@@ -121,11 +121,11 @@ function createCard(element) {
 function renderPagination() {
   const totalPages = Math.ceil(data.length / cardsPerPage);
   const paginationContainer = document.querySelector('#buttons');
-  paginationContainer.innerHTML = '';
+  // paginationContainer.innerHTML = '';
 
   const firstButton = document.createElement('button');
   firstButton.textContent = 'First';
-  firstButton.className = 'pagination button';
+  firstButton.className = 'pagination_button';
   firstButton.addEventListener('click', () => {
     currentPage = 1;
     displayCards(currentPage);
@@ -137,7 +137,7 @@ function renderPagination() {
 
   const nextButton = document.createElement('button');
   nextButton.textContent = 'Next';
-  nextButton.className = 'pagination button';
+  nextButton.className = 'pagination_button';
   nextButton.addEventListener('click', () => {
     if (currentPage < totalPages) {
       currentPage++;
@@ -150,7 +150,7 @@ function renderPagination() {
 
   const previousButton = document.createElement('button');
   previousButton.textContent = 'Previous';
-  previousButton.className = 'pagination button';
+  previousButton.className = 'pagination_button';
   previousButton.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
@@ -163,7 +163,7 @@ function renderPagination() {
 
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement('button');
-    button.className = 'pagination button';
+    button.className = 'pagination_button';
     button.textContent = i;
     button.addEventListener('click', () => {
       currentPage = i;
@@ -176,7 +176,7 @@ function renderPagination() {
 
   const lastButton = document.createElement('button');
   lastButton.textContent = 'Last';
-  lastButton.className = 'pagination button';
+  lastButton.className = 'pagination_button';
   lastButton.addEventListener('click', () => {
     currentPage = totalPages;
     displayCards(currentPage);
@@ -189,7 +189,7 @@ function renderPagination() {
 
 
 function highlightCurrentPageButton() {
-  const buttons = document.querySelectorAll('.pagination button');
+  const buttons = document.querySelectorAll('.pagination_button');
   buttons.forEach((button, index) => {
     button.classList.toggle('active', index + 1 === currentPage);
     // button.className = 'button';
