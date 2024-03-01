@@ -52,12 +52,6 @@ function displayCards(page) {
   }
 }
 
-function createCard(element) {
-  const div = document.createElement('div');
-  div.classList.add('container');
-
-
-}
 
 
 function createCard(element) {
