@@ -66,7 +66,7 @@ function createCard(element) {
 
 
   const table = document.createElement('table');
-  table.className = 'table table-bordered';
+  table.className = 'table_table-bordered';
 
   // Creating table using template literals
   table.innerHTML = `
@@ -148,7 +148,7 @@ function renderPagination() {
 
   // Previous button
   const previousButton = document.createElement('button');
-  previousButton.textContent = 'Previous';
+  previousButton.textContent = 'Prev';
   previousButton.className = 'pagination_button';
   previousButton.addEventListener('click', () => {
     if (currentPage > 1) {
