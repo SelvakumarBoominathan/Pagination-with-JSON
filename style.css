@@ -109,7 +109,7 @@ td {
 }
 
 
-@media (min-width:300px) and (max-width:800px) {
+@media (min-width:300px) and (max-width:500px) {
   .table-responsive {
     display: flex;
     flex-wrap: wrap;
@@ -119,15 +119,53 @@ td {
   #buttons {
     margin: center;
     min-width: 100%;
-    display: grid;
-    grid-template-rows: repeat(2, 0.5fr);
+    padding: 2%;
+    /* display: grid; */
+    /* grid-template-rows: repeat(2, 0.5fr);
     grid-template-columns: repeat(4, 2rem);
-    justify-content: center;
+    justify-content: center; */
 
   }
 
   button {
     min-width: fit-content;
+  }
+
+  table {
+    font-size: medium;
+  }
+
+  .pagination_button {
+    min-width: 2px;
+    min-height: 5px;
+    margin: 5px;
+    height: 1rem;
+    background-color: #2fce71;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    /* align-items: center; */
+    font-weight: 200;
+    text-align: center;
+    line-height: 2px;
+  }
+
+}
+
+
+@media (min-width:501px) and (max-width:770px) {
+
+  .container {
+    padding: 20%;
+  }
+
+  .containerForTable {
+    padding: 0 2% 0 2%;
+    width: 20rem;
+  }
+
+  table {
+    font-size: medium;
   }
 
 }

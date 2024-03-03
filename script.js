@@ -32,7 +32,7 @@ pagination.className = 'd-flex justify-content-center';
 document.body.appendChild(pagination);
 
 
-// fetching data from given collection of object arrays
+// fetching data from given collection of object arrays using then and catch method
 fetch('jsondata.txt')
   .then((response) => response.json())
   .then((jsonData) => {
