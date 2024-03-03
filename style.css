@@ -59,6 +59,7 @@ td {
   margin: 5px;
   height: 1.5rem;
   background-color: #2fce71;
+  color: #000;
   border-radius: 5px;
   border: none;
   padding: 0.5rem;
@@ -70,7 +71,7 @@ td {
 
 
 #title {
-  color: #2f48d8be;
+  color: #e3d402cf;
   border: #000;
   text-shadow: -1px -1px 0 #000000,
     1px -1px 0 #303030,
