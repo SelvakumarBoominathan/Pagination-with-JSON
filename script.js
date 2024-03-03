@@ -13,7 +13,7 @@ document.body.appendChild(title);
 // Description
 const description = document.createElement('p');
 description.id = 'description';
-description.innerText = 'This is a pagination task';
+description.innerText = 'This is a pagination task to display CARDs.';
 document.body.appendChild(description);
 
 
@@ -31,6 +31,8 @@ pagination.id = 'buttons';
 pagination.className = 'd-flex justify-content-center';
 document.body.appendChild(pagination);
 
+
+// fetching data from given collection of object arrays
 fetch('jsondata.txt')
   .then((response) => response.json())
   .then((jsonData) => {
@@ -40,11 +42,13 @@ fetch('jsondata.txt')
   })
   .catch((err) => console.log('Error:', err));
 
+
+// function to display cards in a container
 function displayCards(page) {
   const startIndex = (page - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-  const container = document.querySelector('.table-responsive');
-  container.innerHTML = '';
+  // const container = document.querySelector('.table-responsive');
+  container.innerHTML = '';    // container with class .table-responsive (ref ln:23)
   for (let i = startIndex; i < Math.min(endIndex, data.length); i++) {
     const element = data[i];
     const card = createCard(element);
@@ -53,12 +57,12 @@ function displayCards(page) {
 }
 
 
-
+// function to create all the cards using table element
 function createCard(element) {
 
   // Creating the container div to hold the table
   const div = document.createElement('div');
-  div.classList.add('container');
+  div.classList.add('containerForTable');
 
 
   const table = document.createElement('table');
@@ -111,12 +115,13 @@ function createCard(element) {
 // }
 
 
-
+// function to implement pagination with buttons (First, Next, Previous, 1 to 10, Last)
 function renderPagination() {
   const totalPages = Math.ceil(data.length / cardsPerPage);
   const paginationContainer = document.querySelector('#buttons');
-  // paginationContainer.innerHTML = '';
 
+
+  // First Button
   const firstButton = document.createElement('button');
   firstButton.textContent = 'First';
   firstButton.className = 'pagination_button';
@@ -128,7 +133,7 @@ function renderPagination() {
   paginationContainer.appendChild(firstButton);
 
 
-
+  // Next Button
   const nextButton = document.createElement('button');
   nextButton.textContent = 'Next';
   nextButton.className = 'pagination_button';
@@ -141,7 +146,7 @@ function renderPagination() {
   });
   paginationContainer.appendChild(nextButton);
 
-
+  // Previous button
   const previousButton = document.createElement('button');
   previousButton.textContent = 'Previous';
   previousButton.className = 'pagination_button';
@@ -154,7 +159,7 @@ function renderPagination() {
   });
   paginationContainer.appendChild(previousButton);
 
-
+  // All buttons from 1 to 10
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement('button');
     button.className = 'pagination_button';
@@ -167,7 +172,7 @@ function renderPagination() {
     paginationContainer.appendChild(button);
   }
 
-
+  // Last button
   const lastButton = document.createElement('button');
   lastButton.textContent = 'Last';
   lastButton.className = 'pagination_button';
@@ -182,10 +187,16 @@ function renderPagination() {
 }
 
 
+// To heighlight current button
 function highlightCurrentPageButton() {
   const buttons = document.querySelectorAll('.pagination_button');
   buttons.forEach((button, index) => {
-    button.classList.toggle('active', index + 1 === currentPage);
-    // button.className = 'button';
+
+    if (parseInt(button.textContent) === currentPage) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
   });
 }
+
