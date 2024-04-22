@@ -8,6 +8,11 @@ const arr = [
 
 
 
-
+// rest
 const [ele1, ele2, ...rest] = arr
 console.log(rest)
+
+// spread
+
+const newArr = [...arr, "Lastone"];
+console.log(newArr);
