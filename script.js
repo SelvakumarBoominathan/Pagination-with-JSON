@@ -16,3 +16,12 @@ console.log(rest)
 
 const newArr = [...arr, "Lastone"];
 console.log(newArr);
+
+
+const x = { a: 1, b: 2, c: 3 };
+
+const { a, ...restt } = { a: 1, b: 2, c: 3 };
+restt.b = 'selva'; 
+
+console.log(x); // Output: { b: 2, c: 3 }
+
